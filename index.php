@@ -1,21 +1,16 @@
 <?php
     include("classes/Translation.php");
-?>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-       "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+?><!DOCTYPE html>
+<html lang="<?= $t->getCurrentLanguage()?>">
     <head>
+        <meta charset="utf-8"/>
         <title>OpenSeaMap - <?php echo $t->tr("dieFreieSeekarte")?></title>
-        <meta name="AUTHOR" content="Olaf Hannemann"/>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="content-language" content="<?= $t->getCurrentLanguage()?>"/>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="date" content="2012-06-02">
         <link rel="SHORTCUT ICON" href="resources/icons/OpenSeaMapLogo_16.png">
         <link rel="stylesheet" href="./javascript/ol@v7.3.0/ol.css">
         <link rel="stylesheet" type="text/css" href="index.css">
+
         <script src="./javascript/ol@v7.3.0/ol.js"></script>
         <script type="text/javascript" src="./javascript/translation-<?=$t->getCurrentLanguageSafe()?>.js"></script>
         <script type="text/javascript" src="./javascript/permalink.js"></script>
@@ -30,12 +25,12 @@
         <script type="text/javascript" src="./javascript/geomagjs/geomag.js"></script>
         <script type="text/javascript" src="./javascript/mag_deviation.js"></script>
         <script type="text/javascript">
-
             <?php
-                $tempval = parse_ini_file("/var/lib/online-chart/online_chart.ini");
-                $osm_server = $tempval['osmserver'];
-                echo "var OsmTileServer = ", "\"", $osm_server, "\""
+                //$tempval = parse_ini_file("/var/lib/online-chart/online_chart.ini");
+                //$osm_server = $tempval['osmserver'];
+                //echo "var OsmTileServer = ", "\"", $osm_server, "\""
             ?>
+            var OsmTileServer = "BRAVO";
 
             var map;
 
